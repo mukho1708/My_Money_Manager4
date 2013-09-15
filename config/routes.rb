@@ -1,11 +1,23 @@
 MyMoneyManager4::Application.routes.draw do
-  get "static_pages/home"
+  #get "users/new"
 
-  get "static_pages/partners"
+  #get "static_pages/home"
+
+  #get "static_pages/partners"
   
-  get "static_pages/about"
+  #get "static_pages/about"
   
-  get "static_pages/contact"
+  #get "static_pages/contact"
+  
+  root :to => 'static_pages#home'
+
+  match "/about", to: "static_pages#about", via: "get"
+
+  match "/partners", to: "static_pages#partners", via: "get"
+
+  match "/contact", to: "static_pages#contact", via: "get"
+  
+  match "/signup", to: "users#new", via: "get"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
